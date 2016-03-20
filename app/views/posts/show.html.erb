@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<strong>Image:</strong>
 <%= image_tag @post.image.url(:medium) %>
 
 <p>
@@ -11,6 +12,10 @@
 <p>
 	<strong>Content:</strong>
 	<%= @post.content %>
+</p>
+<p>
+	<strong>Image:</strong>
+	<%= @post.image %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %>

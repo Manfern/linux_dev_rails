@@ -6,9 +6,16 @@
 		<div class="col-md-offset-1">
 		<% @posts.each do |post| %>
 			<div class="col-md-2">
-				
-				<%= post.title %>	
-				<%= post.content %>
+				<div class="front-image">
+					<%= image_tag post.image.url(:small) %>	
+				</div>	
+				<p class="front-post">
+					<%= post.content %>
+				</p>
+				<%= link_to 'Edit Post', edit_post_path(post)   %>
+				<div class="button btn btn-normal">
+					<%= link_to post.title, @post %>  
+				</div>
 			</div>
 		<% end %>
 		<div class="col-md-offset-1">
@@ -18,3 +25,4 @@
 </div>
 
 </div>
+<!-- -->
