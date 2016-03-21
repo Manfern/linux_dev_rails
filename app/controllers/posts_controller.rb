@@ -30,7 +30,7 @@ class PostsController < ApplicationController
 	end
 
 	def new
-
+		render layout: "admin"
 	end
 	def show
 

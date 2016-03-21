@@ -4,9 +4,9 @@
 
 @import "bootstrap";
 
-.container{
+.container-fluid{
   height: 600px;
-  background-color: purple;
+  background-color: grey;
 }
 h1{
   margin: 0;
@@ -14,5 +14,11 @@ h1{
   background-color: red;
 }
 a{
+  display: block;
   color: #fff;
+}
+body{
+  float: none;
+  margin: 0 auto;
+  margin: 20px;
 }
