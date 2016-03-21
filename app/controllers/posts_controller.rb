@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
-	before_action :set_post, only: [:show, :edit, :update, :destroy]
+	before_filter :set_post, only: [:show, :edit, :update, :destroy],:except => [:index]
 
-	
+
 
 	def index
 		@posts=Post.all.order("created_at DESC")
 	end
+
 	def update
 		respond_to do |format|
 			if @post.update(post_params)
@@ -26,14 +27,13 @@ class PostsController < ApplicationController
 		redirect_to @post
 	end
 	def edit
-		@post = Post.new(params[:id])
 	end
 
 	def new
-		
+
 	end
 	def show
-		@post = Post.new(params[:id])
+
 	end
 
 private
@@ -43,7 +43,7 @@ private
 	def set_post
 		@post = Post.find(params[:id])
 	end
-	
+
 	def post_params
 	  params.require(:post).permit(:title, :content, :image)
 	end

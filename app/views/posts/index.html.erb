@@ -1,27 +1,32 @@
 
 
-<h1>Самые интересные новости в сети!</h1>
+<h1 class="text-center">Самые интересные новости в сети!</h1>
 <div class="container">
+	<div class="btn btn-show"></div>
 	<div class="row">
 		<div class="col-md-offset-1">
 		<% @posts.each do |post| %>
 			<div class="col-md-2">
 				<div class="front-image">
-					<%= image_tag post.image.url(:small) %>	
-				</div>	
+					<%= image_tag post.image.url(:small) %>
+				</div>
 				<p class="front-post">
 					<%= post.content %>
 				</p>
-				<%= link_to 'Edit Post', edit_post_path(post)   %>
-				<div class="button btn btn-normal">
-					<%= link_to post.title, @post %>  
+				<div class="button btn btn-success">
+				<%= link_to "Edit post",edit_post_path(post) %>
+				</div>
+				<div class="button btn btn-info">
+					<%= link_to post.title, post %>
 				</div>
 			</div>
 		<% end %>
 		<div class="col-md-offset-1">
 	</div>
-	
-	
+	<div class="button btn btn-primary">
+		<%= link_to 'New Post', new_post_path  %>
+	</div>
+
 </div>
 
 </div>
