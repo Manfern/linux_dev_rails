@@ -25,16 +25,17 @@ class PostsController < ApplicationController
 
 		redirect_to @post
 	end
-	def edit
-		@post = Post.new(params[:id])
-	end
 
-	def new
+	# def edit
+	# 	@post = Post.find(params[:id])
+	# end
+
+	# def new
 		
-	end
-	def show
-		@post = Post.new(params[:id])
-	end
+	# end
+	# def show
+	# 	@post = Post.new(params[:id])
+	# end
 
 private
 
@@ -43,7 +44,7 @@ private
 	def set_post
 		@post = Post.find(params[:id])
 	end
-	
+
 	def post_params
 	  params.require(:post).permit(:title, :content, :image)
 	end
