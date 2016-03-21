@@ -3,3 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import "bootstrap";
+
+.container-fluid{
+  height: 600px;
+  background-color: grey;
+}
+h1{
+  margin: 0;
+  color: #fff;
+  background-color: red;
+}
+a{
+  display: block;
+  color: #fff;
+}
+body{
+  float: none;
+  margin: 0 auto;
+  margin: 20px;
+}
