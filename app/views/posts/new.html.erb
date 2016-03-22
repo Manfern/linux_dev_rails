@@ -1,24 +1,9 @@
 
 
 <h1>Добавить новость</h1>
+<%=  form_for @user, url: students_path, html: { method: :post,multipart: true } do |f| %>
+<%= render 'form', f: f %>  
 
 
-<%= form_for Post.new, url: posts_path, :html => {:multipart => true}  do |f| %>
-	<p>
-		<%= f.label :title  %>
-		<%= f.text_field :title  %>
-	</p>
-	<p>
-		<%= f.label :content  %>
-		<%= f.text_area :content, size: "50x30"  %>
-	</p>
-	<p>
-		<%= f.label :image  %>
-		<%= f.file_field :image %>
-	</p>
 
-		<p>
-
-			<%= f.submit%>
-		</p>
 <% end %>

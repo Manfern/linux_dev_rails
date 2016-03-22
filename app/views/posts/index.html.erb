@@ -13,14 +13,21 @@
 				<p class="front-post">
 					<%= post.content %>
 				</p>
-				<div class="button btn btn-success">
-				<%= link_to "Edit post",edit_post_path(post) %>
-				</div>
-				<div class="button btn btn-info">
-					<%= link_to post.title, post %>
-				</div>
+				<% if user_signed_in? %>
+					<div class="button btn btn-success">
+						<%= link_to 'Edit', edit_post_path(@post) %> 
+					</div>
+					<div class="button btn btn-danger">
+			  			<%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
+			  		</div>
+					<div class="button btn btn-info">
+						<%= link_to "Show post", post %>
+					</div>
+				<% end %>
 			</div>
 		<% end %>
+			
+		
 		<div class="col-md-offset-1">
 	</div>
 	<div class="button btn btn-primary">
