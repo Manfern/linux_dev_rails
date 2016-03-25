@@ -1,38 +1,19 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>NewsPortal</title>
-<!--   <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap.css">
-<link rel="stylesheet" href="//railsgirls.com/assets/bootstrap-theme.css"> -->
-<%= stylesheet_link_tag "default", :media => "all" %>
-  <%= stylesheet_link_tag "default", media: "all", "data-turbolinks-track" => true %>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <%= javascript_include_tag 'default', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-</head>
-<body>	
+    <%= stylesheet_link_tag    "default" %>
+    <%= javascript_include_tag "default", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<div class="container-fluid">
-<div class="row">
+  <body>
 
-</div>
-	<div id="sidebar col-md-2">
-<% if false %>
-			<%=  @posts.each do |post| %>
-				<%= image_tag post.image.url(:small) %>
-				<%= truncate(post.content, length: 20) %>
-			<% end %>
-<% end %>
+    <%= yield %>
 
-
-	</div>
-	<div class="col-md-10 main">
-		<p class="notice"><%= notice %></p>
-		<p class="alert"><%= alert %></p>
-		<%= yield %>
-	</div>
-</div>
-</body>
+  </body>
 </html>

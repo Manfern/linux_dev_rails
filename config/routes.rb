@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-
-  devise_for :admins
-  resources :posts
-  root to: "posts#index"
+	devise_for :admins
+	resources :posts
+  
+  
+  # root to: "posts#index"
   # get 'index', to: 'posts#index'
   
   # get '/posts/index', to: 'posts#index'
