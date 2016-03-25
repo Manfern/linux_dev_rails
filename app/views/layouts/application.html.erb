@@ -2,25 +2,31 @@
 <html>
 <head>
   <title>NewsPortal</title>
-  <%= stylesheet_link_tag    'default', media: 'all', 'data-turbolinks-track' => true %>
+<!--   <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap.css">
+<link rel="stylesheet" href="//railsgirls.com/assets/bootstrap-theme.css"> -->
+<%= stylesheet_link_tag "default", :media => "all" %>
+  <%= stylesheet_link_tag "default", media: "all", "data-turbolinks-track" => true %>
+
   <%= javascript_include_tag 'default', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag "application", :media => "all" %>
+  
 
 </head>
-<body>
+<body>	
+
 <div class="container-fluid">
 <div class="row">
-	
+
 </div>
 	<div id="sidebar col-md-2">
-		
+<% if false %>
 			<%=  @posts.each do |post| %>
 				<%= image_tag post.image.url(:small) %>
 				<%= truncate(post.content, length: 20) %>
 			<% end %>
-		
-		
+<% end %>
+
+
 	</div>
 	<div class="col-md-10 main">
 		<p class="notice"><%= notice %></p>
